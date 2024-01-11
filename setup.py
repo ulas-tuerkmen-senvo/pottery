@@ -14,30 +14,22 @@
 #   See the License for the specific language governing permissions and       #
 #   limitations under the License.                                            #
 # --------------------------------------------------------------------------- #
-
-
 import pathlib
 
 from setuptools import find_packages
 from setuptools import setup
 
-import pottery
-
-
-_package_dir = pathlib.Path(__file__).parent
-_long_description = (_package_dir / 'README.md').read_text()
-
 
 setup(
-    name=pottery.__name__,
-    version=pottery.__version__,
-    description=pottery.__description__,
-    long_description=_long_description,
+    name="pottery",
+    version="3.1.0",
+    description="Better redis interface",
+    long_description="Better redis interface",
     long_description_content_type='text/markdown',
-    url=pottery.__url__,
-    author=pottery.__author__,
-    author_email=pottery.__author_email__,
-    license=pottery.__license__,
+    url='https://github.com/brainix/pottery',
+    author='Rajiv Bakulesh Shah',
+    author_email='brainix@gmail.com',
+    license='Apache 2.0',
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
         'Intended Audience :: Developers',
@@ -55,9 +47,9 @@ setup(
         'Framework :: AsyncIO',
         'Typing :: Typed',
     ],
-    keywords=pottery.__keywords__,
+    keywords='Redis client persistent storage',
     python_requires='>=3.8, <4',
-    install_requires=('redis>=4.2.0rc1, <5', 'mmh3', 'typing_extensions'),
+    install_requires=('redis>5', 'mmh3', 'typing_extensions'),
     extras_require={},
     packages=find_packages(exclude=('contrib', 'docs', 'tests*')),
     package_data={'pottery': ('py.typed',)},
